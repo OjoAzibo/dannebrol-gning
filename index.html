@@ -7,29 +7,32 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
       color: #222;
     }
     header {
-      background: #1c1c1c;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg') center/cover no-repeat;
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: 1px;
+      font-size: 3rem;
+      letter-spacing: 2px;
     }
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+      margin-top: 1rem;
+      font-size: 1.3rem;
     }
     nav {
       background: #b40000;
-      padding: 0.5rem;
+      padding: 0.75rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
       color: #fff;
@@ -38,16 +41,26 @@
       font-weight: bold;
     }
     section {
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       max-width: 1100px;
       margin: auto;
     }
     .hero {
-      background: #f2f2f2;
       text-align: center;
     }
     .hero h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 1.8rem;
+      background: #b40000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
     }
     .services {
       display: grid;
@@ -55,12 +68,24 @@
       gap: 2rem;
     }
     .service {
-      background: #fafafa;
-      padding: 1.5rem;
-      border-left: 5px solid #b40000;
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border-radius: 6px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
     .about {
-      background: #f7f7f7;
+      background: #f5f5f5;
+      border-radius: 8px;
     }
     .contact {
       background: #1c1c1c;
@@ -71,87 +96,99 @@
       background: #000;
       color: #aaa;
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem;
       font-size: 0.9rem;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background: #b40000;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Dannebrolægning</h1>
-    <p>Professionel brolægning – udført med erfaring, kvalitet og stolthed</p>
-  </header>
+<header>
+  <h1>Dannebrolægning</h1>
+  <p>Solidt brolæggerarbejde – bygget til at holde i generationer</p>
+</header>
 
-  <nav>
-    <a href="#ydelser">Ydelser</a>
-    <a href="#om">Om os</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
+<nav>
+  <a href="#ydelser">Ydelser</a>
+  <a href="#projekter">Projekter</a>
+  <a href="#om">Om os</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
 
-  <section class="hero">
-    <h2>Brolægger med solid erfaring siden 2000</h2>
-    <p>Vi udfører alt fra større entrepriser til mindre projekter for private kunder.</p>
-    <a class="btn" href="#kontakt">Få et uforpligtende tilbud</a>
-  </section>
+<section class="hero">
+  <h2>Professionel brolægning med øje for detaljen</h2>
+  <p>
+    Hos Dannebrolægning får du gennemført håndværk, klar kommunikation og et resultat,
+    der både er flot at se på og stærkt nok til daglig brug.
+  </p>
+  <a class="btn" href="#kontakt">Få et gratis tilbud</a>
+</section>
 
-  <section id="ydelser">
-    <h2>Vores ydelser</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Brolægning</h3>
-        <p>Indkørsler, terrasser, stier og gårdmiljøer i høj kvalitet og flot finish.</p>
-      </div>
-      <div class="service">
-        <h3>Kantsten & trapper</h3>
-        <p>Opsætning af kantsten, støttemure og stentrapper med fokus på holdbarhed.</p>
-      </div>
-      <div class="service">
-        <h3>Konstruktion & belægning</h3>
-        <p>Alle former for konstruktionsarbejde og belægningsopgaver – stort som småt.</p>
-      </div>
-      <div class="service">
-        <h3>Entrepriser & private opgaver</h3>
-        <p>Vi arbejder for både virksomheder, boligforeninger og private kunder.</p>
-      </div>
+<section id="ydelser">
+  <h2>Vores ydelser</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Indkørsler & terrasser</h3>
+      <p>
+        Vi skaber indkørsler og terrasser, der løfter hele boligens udtryk og samtidig
+        holder i mange år – uden sætninger og sjusk.
+      </p>
     </div>
-  </section>
+    <div class="service">
+      <h3>Støttemure & trapper</h3>
+      <p>
+        Funktionelle og æstetiske løsninger i natursten og beton – perfekt til
+        niveauforskelle og skrånende terræn.
+      </p>
+    </div>
+    <div class="service">
+      <h3>Belægning & anlæg</h3>
+      <p>
+        Fra mindre haveprojekter til større entrepriser. Vi tager ansvar for hele
+        processen – fra bundopbygning til færdigt resultat.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <section id="om" class="about">
-    <h2>Om Dannebrolægning</h2>
-    <p>
-      Dannebrolægning blev etableret i 2006 af brolægger Thor Sundstrøm. Thor har siden
-      sin svendeprøve i 2000 dygtiggjort sig inden for alle former for brolægnings- og
-      konstruktionsarbejde.
-    </p>
-    <p>
-      Med mange års erfaring bag sig har Thor arbejdet med både større entrepriser og
-      mindre projekter for private kunder. Det betyder, at du altid får professionel
-      rådgivning, solidt håndværk og et resultat, der holder i mange år.
-    </p>
-  </section>
+<section id="projekter">
+  <h2>Udvalgte projekter</h2>
+  <div class="gallery">
+    <img src="projekt1.jpg" alt="Brolagt have med natursten" />
+    <img src="projekt2.jpg" alt="Indgangsparti med chaussésten" />
+    <img src="projekt3.jpg" alt="Træbeklædt bygning med stensætning" />
+    <img src="projekt4.jpg" alt="Stentrappe i haveanlæg" />
+    <img src="projekt5.jpg" alt="Haveanlæg med store kampesten" />
+    <img src="projekt6.jpg" alt="Brolagt område med natursten" />
+  </div>
+</section>
 
-  <section id="kontakt" class="contact">
-    <h2>Kontakt os</h2>
-    <p>Har du et projekt i tankerne? Vi giver gerne et uforpligtende tilbud.</p>
-    <p><strong>Brolægger Thor Sundstrøm</strong></p>
-    <p>Dannebrolægning</p>
-    <p>Telefon: 12 34 56 78</p>
-    <p>Email: info@dannebrolaegning.dk</p>
-  </section>
+<section id="om" class="about">
+  <h2>Om Dannebrolægning</h2>
+  <p>
+    Dannebrolægning blev grundlagt i 2006 af brolægger Thor Sundstrøm. Med svendeprøve
+    siden 2000 og mange års erfaring i branchen er kvalitet og faglig stolthed altid i
+    centrum.
+  </p>
+  <p>
+    Thor har arbejdet med både store entrepriser og mindre opgaver for private kunder.
+    Det betyder, at du får en brolægger, der forstår både de tekniske detaljer og dine
+    ønsker – og som ikke går på kompromis med kvaliteten.
+  </p>
+</section>
 
-  <footer>
-    <p>© 2026 Dannebrolægning – Alle rettigheder forbeholdes</p>
-  </footer>
+<section id="kontakt" class="contact">
+  <h2>Kontakt os i dag</h2>
+  <p>Har du et projekt i tankerne? Så lad os tage en snak – det er helt uforpligtende.</p>
+  <p><strong>Thor Sundstrøm – Brolægger</strong></p>
+  <p>Telefon: 12 34 56 78</p>
+  <p>Email: info@dannebrolaegning.dk</p>
+  <a class="btn" href="tel:12345678">Ring nu</a>
+</section>
+
+<footer>
+  <p>© 2026 Dannebrolægning – Kvalitet, der kan ses og mærkes</p>
+</footer>
 
 </body>
 </html>
